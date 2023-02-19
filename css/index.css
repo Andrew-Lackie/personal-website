@@ -1,0 +1,878 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+:root {
+  --color-light: rgba(132, 139,200, 0.38);
+  --box-shadow: 0 3rem 4rem var(--color-light);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+.nav-container {
+  position: relative;
+  float: right;
+  z-index: 2;
+}
+
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2rem;
+  font-size: 16px;
+  color: #ecf0f1;
+}
+
+nav ul li {
+  padding-left: 2rem;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  border: none;
+  color: #ecf0f1;
+}
+
+.section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.fp-overflow {
+  height: 100%;
+}
+
+#fp-nav ul li a span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background: #ecf0f1;
+}
+
+#fp-nav ul li .fp-tooltip {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #ecf0f1;
+}
+
+#home {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #090a0f 0%, #1b2735 100%);
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  overflow: hidden;
+  font-weight: 100;
+  font-family: "Montserrat", sans-serif;
+  font-size: 33px;
+  line-height: 40px;
+  color: #ecf0f1;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  background: plum;
+  width: 140px;
+  height: 140px;
+  border-radius: 40% 60% 70% 30%/40% 50% 60% 50%;
+  overflow: hidden;
+  animation: morph 3s linear infinite;
+}
+
+.circle img {
+  width: 140px;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 40% 60% 70% 30%/40% 40% 60% 50%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50%/30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100%/100% 100% 60% 60%;
+  }
+}
+
+.title span {
+  color: #16a085;
+  /*color: #0077b5;*/
+  font-weight: 700;
+  font-family: "Abril Fatface", sans-serif;
+}
+
+.content {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 160px;
+  overflow: hidden;
+  font-size: 33px;
+  line-height: 40px;
+  color: #ecf0f1;
+}
+.content__container {
+  font-weight: 100;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 30px;
+}
+.content__container:before {
+  content: "[";
+  left: 0;
+}
+.content__container:after {
+  content: "]";
+  position: absolute;
+  right: 0;
+}
+
+.content__container:after, .content__container:before {
+  position: absolute;
+  top: 0;
+  color: #16a085;
+  font-size: 40px;
+  line-height: 40px;
+  -webkit-animation-name: opacity;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: opacity;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.content__container__text {
+  width: auto;
+  display: inline;
+  float: left;
+  margin: 0;
+}
+.content__container__list {
+  margin-top: 0;
+  padding-left: 87px;
+  text-align: left;
+  list-style: none;
+  margin-left: 0.55rem;
+  -webkit-animation-name: change;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: change;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.content__container__list__item {
+  line-height: 40px;
+  font-weight: 400;
+}
+
+@-webkit-keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes change {
+  0%, 12.66%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%, 29.32% {
+    transform: translate3d(0, -20%, 0);
+  }
+  33.32%, 45.98% {
+    transform: translate3d(0, -40%, 0);
+  }
+  49.98%, 62.64% {
+    transform: translate3d(0, -60%, 0);
+  }
+  66.64%, 79.3% {
+    transform: translate3d(0, -80%, 0);
+  }
+  83.3%, 95.96% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes change {
+  0%, 12.66%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%, 29.32% {
+    transform: translate3d(0, -20%, 0);
+  }
+  33.32%, 45.98% {
+    transform: translate3d(0, -40%, 0);
+  }
+  49.98%, 62.64% {
+    transform: translate3d(0, -60%, 0);
+  }
+  66.64%, 79.3% {
+    transform: translate3d(0, -80%, 0);
+  }
+  83.3%, 95.96% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.social-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.social-links #linkedin {
+  margin-right: 0.5rem;
+}
+
+.social-links i {
+  cursor: pointer;
+}
+
+.social-links div:hover i {
+  animation: jump 1.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes jump {
+    0% { transform: translate(0, 0) scale(1.25, 0.75); }
+    50% { transform: translate(0, -100%) scale(1, 1); }
+    55% { transform: translate(0, -100%) rotate(15deg); }
+    60% { transform: translate(0, -100%) rotate(-15deg); }
+    65% { transform: translate(0, -100%) rotate(15deg); }
+    70% { transform: translate(0, -100%) rotate(-15deg); }
+    80% { transform: translate(0, 0) scale(1.25, 0.75); }
+    85% { transform: translate(0, 0) scale(1.35, 0.65); }
+    90% { transform: translate(0, 0) scale(1.25, 0.75); }
+    100% { transform: translate(0, 0) scale(1, 1); }
+  }
+
+.down {
+  animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container a {
+  text-decoration: none;
+}
+
+.button-container a i {
+  color: #16a085;
+}
+
+@keyframes downarrow {
+  0% { transform: translate(0, 0); opacity: 0.4; }
+  100% { transform: translate(0, 1rem); opacity: 0.9; }
+}
+
+#whoami {
+  background: linear-gradient(185deg, #fff 0%, #fff 85%, #FFCF8D 85%, #FFCF8D 100%);
+}
+
+.star-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.info-container {
+  color: #1b2735;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+.whoami-section {
+  text-align: left;
+  align-self: flex-end;
+  width: 33.3333333%;
+  height: 93%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
+  padding-left: 6rem;
+  padding-right: 2rem;
+}
+
+.whoami-section-header h3 {
+  font-weight: 700;
+  width: fit-content;
+  font-size: 2.0rem;
+  font-family: "Abril Fatface", sans-serif;
+  margin-top: 1rem;
+}
+
+.whoami-section-header h3 span {
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px dashed #FFCF8D;
+}
+
+.whoami-section .whoami-section-content .text-container-1 {
+  width: 75%;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.whoami-section .whoami-section-content .text-container-1 .header-text {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.whoami-section .whoami-section-content .text-container-1 .content-text {
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.whoami-section .whoami-section-content .text-container-2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+
+.whoami-section .whoami-section-content .text-container-2 button {
+  margin-right: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  width: 50%;
+  border: 2px solid #16a085;
+  cursor: pointer;
+  background-color: inherit;
+  color: #16a085;
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+}
+
+.whoami-section #whoami-personal-info .text-container-1 {
+  width: 85%;
+}
+
+.whoami-section #whoami-personal-info .text-container-1 .content-text {
+  margin-top: 4rem;
+  color: #808080;
+  font-weight: 400;
+}
+
+.whoami-section #whoami-personal-info .text-container-1 .content-text span {
+  color: #1b2735;
+  font-weight: 700;
+}
+
+.whoami-section #whoami-personal-info .social-media-container {
+  width: 100%;
+  margin-top: 25%;
+}
+
+.whoami-section #whoami-personal-info .social-media-container i {
+  color: #16a085;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.whoami-section .whoami-section-content .skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  width: auto;
+  border: 2px solid #d3d3d3;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.whoami-section .whoami-section-content .skills-container:hover {
+  background-color: #f9f9f9;
+}
+
+.whoami-section .whoami-section-content .skills-container i,
+.whoami-section .whoami-section-content .skills-container svg {
+  margin: 0.5rem;
+  color: #16a085;
+  align-self: center;
+}
+
+.whoami-section .whoami-section-content .skills-container span {
+  align-self: center;
+  font-size: 12px;
+  color: #d3d3d3;
+}
+
+.whoami-section #whoami-expertise-info {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#education {
+  background: linear-gradient(359deg, #fff 0%, #fff 96%, #FFCF8D 96%, #FFCF8D 100%);
+}
+
+#education .info-container .whoami-section {
+  align-self: flex-start;
+  min-height: 115%;
+  height: auto;
+  margin: 1rem;
+  padding-left: 2rem;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  margin-left: 3rem;
+}
+
+#education .info-container #expertise-section {
+  padding: 0;
+  border: none;
+  margin-right: 3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#education .info-container #expertise-section .split-container {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
+  padding-left: 2rem;
+  padding-right: 0;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 23vh;
+}
+
+#education .info-container #expertise-section .split-container span {
+  font-weight: 500;
+}
+
+.whoami-section #education-section-content .text-container-1 {
+  width: 100%;
+}
+
+.whoami-section #education-section-content .text-container-1 h3 {
+  font-weight: 700;
+  color: #16a085;
+  font-size: 14px;
+}
+.whoami-section #education-section-content .text-container-1 h4 {
+  font-weight: 700;
+  color: #1b2735;
+  font-size: 12px;
+  margin: 0;
+}
+
+.whoami-section #education-section-content .text-container-1 h5 {
+  font-weight: 700;
+  color: #1b2735;
+  font-size: 10px;
+}
+
+.whoami-section #education-section-content .text-container-1 p {
+  font-weight: 400;
+  color: #1b2735;
+  font-size: 8px;
+}
+
+.whoami-section #education-section-content .text-container-1 img {
+  padding-top: 2rem;
+}
+
+.whoami-section #education-section-content .text-container-1 .underline {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.whoami-section .whoami-section-content .expertise-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #d3d3d3;
+  padding-top: 0.50rem;
+  padding-bottom: 0.50rem;
+}
+
+#whoami-experience-info .text-container-1 h3 {
+  color: #16a085;
+  font-size: 14px;
+}
+
+#whoami-experience-info .text-container-1 {
+  width: 100%;
+}
+
+#whoami-experience-info .text-container-1 h4 {
+  font-weight: 700;
+  font-size: 10px;
+}
+
+
+#whoami-experience-info .text-container-1 p {
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.whoami-section .whoami-section-content .expertise-container .expertise-content-container h3 {
+  margin: 0;
+  color: #1b2735;
+  font-size: 0.60rem;
+}
+
+.whoami-section .whoami-section-content .expertise-container .expertise-content-container .bar {
+  margin-top: 1rem;
+  width: 100%;
+  height: 4px;
+  border-radius: 1rem;
+  background-color: #d3d3d3;
+}
+
+.whoami-section .whoami-section-content .expertise-container .expertise-content-container .bar .progress {
+  width: 65%;
+  height: 4px;
+  border-radius: 1rem;
+}
+
+.whoami-section .whoami-section-content .expertise-container .expertise-content-container {
+  width: 220px;
+}
+
+.expertise-icon-container svg {
+  margin-right: 2rem;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  color: #d3d3d3;
+  margin-top: 1rem;
+}
+
+#portfolio .info-container {
+  display: flex;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+  z-index: 2;
+  align-self: end;
+  text-align: center;
+}
+
+.portfolio-container ul {
+  display: flex;
+  height: 10%;
+  padding: 1rem;
+  width: 75%;
+  justify-content: center;
+  flex-direction: row;
+  align-self: center;
+  font-size: 13px;
+  border-bottom: solid 1px #d3d3d3;
+}
+
+.portfolio-container ul li {
+  padding-left: 2rem;
+  list-style: none;
+}
+
+.portfolio-container ul li button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  font-size: 1.0rem;
+}
+
+.project-container {
+  display: none;
+  flex-direction: row;
+  gap: 1rem;
+  height: 80%;
+  width: 75%;
+  align-self: center;
+  justify-content: center;
+}
+
+.project-container .project {
+  margin-top: 2rem;
+  border-radius: 0.3rem;
+  display: flex;
+  background-color: #fff;
+  height: min-content;
+  width: min-content;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 13px;
+  z-index: 3;
+  position: relative;
+}
+
+.project img {
+  height: 185px;
+  width: auto;
+  border-radius: 0.3rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #e44d26;
+  border-radius: 0.3rem;
+}
+
+.overlay a {
+  display: inline-block;
+  margin: 0.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.overlay button {
+  background-color: inherit;
+  border: none;
+}
+
+.overlay a:hover {
+  background: #fff;
+}
+
+.overlay a:hover i {
+  color: #e44d26;
+}
+
+.overlay i {
+  color: #fff;
+}
+
+.project:hover .overlay {
+  opacity: 0.7;
+}
+
+.text {
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.project-content {
+  position: fixed;
+  z-index: 4;
+  display: none;
+  position: absolute;
+  height: 400px;
+  width: auto;
+  overflow-y: scroll;
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+}
+
+.project-content h3 {
+  color: #16a085;
+}
+
+.project-content video {
+  height: 400px;
+  width: auto;
+}
+
+.footer {
+  background-color: #E44D26;
+  position: absolute;
+  margin-top: 2rem;
+  width: 100%;
+  height: fit-content;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  bottom: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.footer-text {
+  color: #fff;
+  width: 100%;
+}
+
+.footer-text i {
+  color: #1b2735;
+  margin-left: 1rem;
+}
+
+.fp-watermark {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+	.info-container {
+    display: block;
+	}
+
+  .whoami-section {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #d3d3d3;
+    padding-bottom: 2rem;
+  }
+
+  #education .info-container #expertise-section .split-container {
+    border: none;
+    width: 50%;
+    align-self: center;
+    padding: 0;
+  }
+
+  #education .info-container #expertise-section {
+    padding-left: 2rem;
+  }
+
+  #education .info-container #expertise-section .split-container div {
+    width: 100%;
+  }
+
+  #education .info-container .whoami-section {
+    margin: 0;
+    min-height: auto;
+  }
+
+  #whoami .info-container .whoami-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .whoami-section .whoami-section-header {
+    align-self: center;
+    width: 50%;
+  }
+
+  .whoami-section-content {
+    align-self: center;
+    width: 50%;
+  }
+
+  .info-container {
+    height: auto;
+  }
+
+  .portfolio-container {
+    height: auto;
+  }
+
+  .project-container {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  .footer {
+    background-color: #E44D26;
+    position: relative;
+    margin-top: 2rem;
+  }
+
+  .project-container .project {
+    align-self: center;
+  }
+
+  #whoami {
+    background: none;
+  }
+
+  #education {
+    background: none;
+  }
+
+  #portfolio .footer-text {
+    color: #1b2735;
+  }
+
+  .content {
+    top: 50%;
+  }
+
+  .content__container:after, .content__container:before {
+    font-size: 26px;
+  }
+}
