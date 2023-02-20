@@ -31,7 +31,7 @@ nav > ul {
   display: flex;
   flex-direction: row;
   margin-right: 2rem;
-  font-size: 16px;
+  font-size: 12px;
   color: #ecf0f1;
 }
 
@@ -85,7 +85,7 @@ nav ul li a {
   overflow: hidden;
   font-weight: 100;
   font-family: "Montserrat", sans-serif;
-  font-size: 33px;
+  font-size: 29px;
   line-height: 40px;
   color: #ecf0f1;
 }
@@ -135,7 +135,7 @@ nav ul li a {
   transform: translate(-50%, -50%);
   height: 160px;
   overflow: hidden;
-  font-size: 33px;
+  font-size: 29px;
   line-height: 40px;
   color: #ecf0f1;
 }
@@ -159,7 +159,7 @@ nav ul li a {
   position: absolute;
   top: 0;
   color: #16a085;
-  font-size: 40px;
+  font-size: 46px;
   line-height: 40px;
   -webkit-animation-name: opacity;
   -webkit-animation-duration: 2s;
@@ -347,7 +347,7 @@ nav ul li a {
 .whoami-section-header h3 {
   font-weight: 700;
   width: fit-content;
-  font-size: 2.0rem;
+  font-size: 1.6rem;
   font-family: "Abril Fatface", sans-serif;
   margin-top: 1rem;
 }
@@ -361,17 +361,17 @@ nav ul li a {
 .whoami-section .whoami-section-content .text-container-1 {
   width: 75%;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   text-align: left;
 }
 
 .whoami-section .whoami-section-content .text-container-1 .header-text {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
 }
 
 .whoami-section .whoami-section-content .text-container-1 .content-text {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
 
 }
@@ -386,7 +386,7 @@ nav ul li a {
   margin-right: 1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 12px;
   width: 50%;
   border: 2px solid #16a085;
   cursor: pointer;
@@ -446,7 +446,7 @@ nav ul li a {
 
 .whoami-section .whoami-section-content .skills-container span {
   align-self: center;
-  font-size: 12px;
+  font-size: 8px;
   color: #d3d3d3;
 }
 
@@ -485,7 +485,7 @@ nav ul li a {
   border-color: #d3d3d3;
   padding-left: 2rem;
   padding-right: 0;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
   min-height: 23vh;
 }
@@ -501,25 +501,25 @@ nav ul li a {
 .whoami-section #education-section-content .text-container-1 h3 {
   font-weight: 700;
   color: #16a085;
-  font-size: 14px;
+  font-size: 10px;
 }
 .whoami-section #education-section-content .text-container-1 h4 {
   font-weight: 700;
   color: #1b2735;
-  font-size: 12px;
+  font-size: 8px;
   margin: 0;
 }
 
 .whoami-section #education-section-content .text-container-1 h5 {
   font-weight: 700;
   color: #1b2735;
-  font-size: 10px;
+  font-size: 6px;
 }
 
 .whoami-section #education-section-content .text-container-1 p {
   font-weight: 400;
   color: #1b2735;
-  font-size: 8px;
+  font-size: 4px;
 }
 
 .whoami-section #education-section-content .text-container-1 img {
@@ -542,7 +542,7 @@ nav ul li a {
 
 #whoami-experience-info .text-container-1 h3 {
   color: #16a085;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 #whoami-experience-info .text-container-1 {
@@ -551,19 +551,19 @@ nav ul li a {
 
 #whoami-experience-info .text-container-1 h4 {
   font-weight: 700;
-  font-size: 10px;
+  font-size: 6px;
 }
 
 
 #whoami-experience-info .text-container-1 p {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 6px;
 }
 
 .whoami-section .whoami-section-content .expertise-container .expertise-content-container h3 {
   margin: 0;
   color: #1b2735;
-  font-size: 0.60rem;
+  font-size: 0.40rem;
 }
 
 .whoami-section .whoami-section-content .expertise-container .expertise-content-container .bar {
@@ -618,7 +618,7 @@ nav ul li a {
   justify-content: center;
   flex-direction: row;
   align-self: center;
-  font-size: 13px;
+  font-size: 9px;
   border-bottom: solid 1px #d3d3d3;
 }
 
@@ -634,7 +634,7 @@ nav ul li a {
   padding: 1rem;
   border-radius: 0.8rem;
   font-weight: 700;
-  font-size: 1.0rem;
+  font-size: 0.7rem;
 }
 
 .project-container {
@@ -656,12 +656,13 @@ nav ul li a {
   width: min-content;
   justify-content: center;
   flex-direction: row;
-  font-size: 13px;
+  font-size: 9px;
   z-index: 3;
   position: relative;
 }
 
-.project img {
+.project img,
+.project video {
   height: 185px;
   width: auto;
   border-radius: 0.3rem;
@@ -718,7 +719,7 @@ nav ul li a {
 
 .text {
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -760,7 +761,6 @@ nav ul li a {
   padding-bottom: 3rem;
   bottom: 0;
   text-align: center;
-  z-index: 10;
 }
 
 .footer-text {
@@ -771,10 +771,6 @@ nav ul li a {
 .footer-text i {
   color: #1b2735;
   margin-left: 1rem;
-}
-
-.fp-watermark {
-  display: none;
 }
 
 @media screen and (max-width: 1200px) {
@@ -873,6 +869,6 @@ nav ul li a {
   }
 
   .content__container:after, .content__container:before {
-    font-size: 26px;
+    font-size: 22px;
   }
 }

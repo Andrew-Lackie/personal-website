@@ -8,6 +8,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script src="https://kit.fontawesome.com/052b886eac.js" crossorigin="anonymous"></script>
+  <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
 
 	<title>Andrew Lackie</title>
 
@@ -97,9 +98,11 @@
               <p class="content-text">... and a physics & mathematics student (not in school currently), hacker / penetration tester, Linux hobbyist, avid reader, singer, and adventurer.</p>
             </div>
             <div class="text-container-2">
-              <button >View My CV</button>
+              <button id="view-cv-btn">View My CV</button>
             </div>
           </div>
+
+          <div id="adobe-dc-view" style="position: absolute; height: 0; width: 0;"></div>
         </div>
         <div class="whoami-section">
           <div class="whoami-section-header"><h3><span>Pers</span>onal Info</h3></div>
@@ -340,7 +343,9 @@
             </div>
 
             <div class="project">
-              <img src="../img/personal.png" alt="">
+              <video autoplay loop>
+                <source src="../videos/personal-website.mp4" type="video/mp4">
+              </video>
               <div class="overlay">
                 <div class="text">
                   </button>
@@ -352,7 +357,7 @@
             </div>
 
 
-            <div id="dg-content" class="project-content">
+            <div id="all-dg-content" class="project-content">
               <div class="video-container">
                 <h3>Front Pages</h3>
                <video controls>
@@ -383,7 +388,7 @@
               </div>
             </div>
 
-            <div class="pong project-content">
+            <div id="all-pong" class="pong project-content">
               <div class="video-container">
                <video controls>
                   <source src="../videos/pong.mp4" type="video/mp4">
@@ -414,7 +419,7 @@
                 </div>
               </div>
             </div>
-            <div id="dg-content" class="project-content">
+            <div id="web-dg-content" class="project-content">
               <div class="video-container">
                 <h3>Front Pages</h3>
                <video controls>
@@ -446,7 +451,7 @@
             </div>
 
             <div class="project">
-              <img src="../img/personal.png" alt="">
+              <video src="../videos/personal-website.mp4" loop></video>
               <div class="overlay">
                 <div class="text">
                   </button>
@@ -476,7 +481,7 @@
                 </div>
               </div>
 
-            <div class="pong project-content">
+            <div id="games-pong" class="pong project-content">
               <div class="video-container">
                <video controls>
                   <source src="../videos/pong.mp4" type="video/mp4">
@@ -493,7 +498,7 @@
       </div>
       <div class="footer">
         <p class="footer-text"> Designed and built by me with HTML, CSS, JS, and FullPage <i class="fa-brands fa-space-awesome"></i></p>
-        <p class="footer-text"><a href=""><i class="fa-solid fa-lg fa-code"></i></a></p>
+        <p class="footer-text"><a href="https://github.com/Andrew-Lackie/personal-website"><i class="fa-solid fa-lg fa-code"></i></a></p>
       </div>
     </div>
 
@@ -503,7 +508,8 @@
   <script>
     new fullpage('#fullpage', {
     //options here
-    autoScrolling:true,
+    licenseKey: 'LQ7D6-8JF27-CIYF7-5Q5DI-KTOVM',
+    autoScrolling: true,
     css3: true,
     menu: '.main-nav ul',
     scrollingSpeed: 1000,
@@ -515,7 +521,7 @@
     navigation: true,
     navigationTooltips: ['Home', 'Who am I?', 'Education', 'Portfolio'],
     showActiveTooltip: true,
-    normalScrollElements: '#dg-content',
+    normalScrollElements: '#all-dg-content, #all-pong, #web-dg-content, #games-pong, .project-content',
 
     afterLoad() {
       let portfolioSections = document.querySelectorAll(".project-container")
@@ -563,9 +569,48 @@
           }
         })
       })
+
+      const clientId = 'de14f678a08e4bfbae2af74e0acaa599';
+      const viewerOptions = {
+        embedMode: 'LIGHT_BOX',
+      };
+
+      function fetchPDF(urlToPDF) {
+        return new Promise((resolve) => {
+          fetch(urlToPDF)
+            .then((resolve) => resolve.blob())
+            .then((blob) => {
+              resolve(blob.arrayBuffer());
+            });
+        });
+      }
+
+      function showPDF(urlToPDF) {
+        var adobeDCView = new AdobeDC.View({
+          clientId: clientId,
+        });
+        var previewFilePromise = adobeDCView.previewFile(
+          {
+            content: { promise: fetchPDF(urlToPDF) },
+            metaData: { fileName: urlToPDF.split('/').slice(-1)[0] },
+          },
+          viewerOptions
+        );
+      }
+
+      var adobeDCView = new AdobeDC.View({
+        clientId: clientId,
+        divId: "adobe-dc-view",
+      });
+      document
+        .getElementById('view-cv-btn')
+        .addEventListener('click', function () {
+          showPDF(
+            'http://localhost/dev/personal/personal_website/docs/cv.pdf'
+          );
+        });
+
     },
-
-
 
     onLeave (origin, destination, direction, trigger) {
       const links = document.querySelectorAll('.nav-container nav ul li a');
