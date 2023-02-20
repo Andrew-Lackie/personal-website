@@ -19,6 +19,7 @@ body {
 
 a {
   cursor: pointer;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -761,6 +762,7 @@ nav ul li a {
   padding-bottom: 3rem;
   bottom: 0;
   text-align: center;
+  z-index: 10;
 }
 
 .footer-text {
@@ -771,6 +773,10 @@ nav ul li a {
 .footer-text i {
   color: #1b2735;
   margin-left: 1rem;
+}
+
+.fp-watermark {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {
